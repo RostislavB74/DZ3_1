@@ -62,9 +62,9 @@ def sort_folder(path: Path) -> None:
             if elem.stem in extensions.keys():
                 continue
         if elem.is_file():
-            thread = threading.Thread(
+            th = threading.Thread(
                 target=sort_and_move_file, args=(elem, path))
-            thread.start()
+            th.start()
 
 
 def main():
